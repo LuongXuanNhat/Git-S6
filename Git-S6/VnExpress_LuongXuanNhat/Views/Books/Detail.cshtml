@@ -1,0 +1,59 @@
+﻿@model VnExpress_LuongXuanNhat.Models.Book
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/style.css" rel="stylesheet" />
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+        <img src="/@Html.DisplayFor(model => model.Cover)" alt="thumbnail" />
+    </div>
+    <hr />
+    <dl class="caption">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author):   @Html.DisplayFor(model => model.Author)
+        </dt>
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicYear): @Html.DisplayFor(model => model.PublicYear)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price):      @Html.DisplayFor(model => model.Price)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)   
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <div>
+            <a href="#" class="" role="button">
+                @Html.ActionLink("Trở về", "ListBook", "", new { @class = "btn btn-info" })
+            </a>
+        </div>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "ListBook")
+</p>

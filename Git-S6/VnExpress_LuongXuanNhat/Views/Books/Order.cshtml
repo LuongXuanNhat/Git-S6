@@ -1,0 +1,61 @@
+﻿@model VnExpress_LuongXuanNhat.Models.Book
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/style.css" rel="stylesheet" />
+<h2>Order</h2>
+
+<div>
+    <h4>Mua sách</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="popover-title text-center order" style="">
+            <p style="font-size:30px; color: orangered">
+                @Html.DisplayFor(model => model.Title)
+            </p>
+            <span>
+                @Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Author)
+            </span>
+            <p>
+                <img src="/@Html.DisplayFor(model => model.Cover)" alt="hinh thumnail" class="fix-img" />
+                <div class="form-group text-center" style="display:inline-block;">
+                    @Html.Label("Sô lượng mua", htmlAttributes: new { @class = " control-label col-md-5"  })
+                    <div class="col-md-5">
+                        @Html.EditorFor(model => model.PublicYear, new { htmlAttributes = new { @class = " text-center form-control" } })
+                        @Html.ValidationMessageFor(model => model.PublicYear)
+                    </div>
+                </div>
+            </p>
+
+            @*<p>
+                @Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price)
+            </p>*@
+            @*<p style="margin-left:100px;margin-right:100px;text-align:justify; font-style:normal">
+                @Html.DisplayFor(model => model.Description)
+            </p>*@
+
+
+        </div>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div>
+    <a href="#" class="" role="button">
+        @Html.ActionLink("Back", "ListBook", "", new { @class = "btn btn-info" })
+    </a> |
+    <input type="submit" value="Thanh toán" class="btn btn-default" style="background-color:orangered; color:white" />
+</div> 
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
