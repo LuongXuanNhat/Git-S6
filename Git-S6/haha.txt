@@ -1,2 +1,5 @@
 ooooo
+<<<<<<< HEAD
 get
+=======
+>>>>>>> 101d5ce2d5f8ccbfae943f07104d8fef47a4144c
